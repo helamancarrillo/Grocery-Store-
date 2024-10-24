@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/css/styles.css"/>
+  <title>Search Results</title>
+</head>
+<body>
+  <h1>Search Results</h1>
+  <ul>
+    <% products.forEach(product => { %>
+      <li>
+        <h3><%= product.title %></h3>
+        <img src="<%= product.image %>" alt="<%= product.title %>" />
+        <button onclick="addToCart('<%= product.title %>')">Add to Cart</button>
+      </li>
+    <% }) %>
+  </ul>
+
+  <script>
+    async function addToCart(item) {
+      const response = await fetch('/cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ item }),
+      });
+      const data = await response.json();
+      console.log('Cart:', data.cart);
+    }
+  </script>
+</body>
+</html>
