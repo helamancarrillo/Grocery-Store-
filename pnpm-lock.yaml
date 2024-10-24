@@ -27,6 +27,9 @@ importers:
       vite:
         specifier: ^5.4.10
         version: 5.4.10
+      vite-plugin-ejs:
+        specifier: ^1.7.0
+        version: 1.7.0(vite@5.4.10)
 
 packages:
 
@@ -724,6 +727,11 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
+  vite-plugin-ejs@1.7.0:
+    resolution: {integrity: sha512-JNP3zQDC4mSbfoJ3G73s5mmZITD8NGjUmLkq4swxyahy/W0xuokK9U9IJGXw7KCggq6UucT6hJ0p+tQrNtqTZw==}
+    peerDependencies:
+      vite: '>=5.0.0'
+
   vite@5.4.10:
     resolution: {integrity: sha512-1hvaPshuPUtxeQ0hsVH3Mud0ZanOLwVTneA1EgbAM5LhaZEqyPWGRQ7BtaMvUrTDeEaC8pxtj6a6jku3x4z6SQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -1399,6 +1407,11 @@ snapshots:
   utils-merge@1.0.1: {}
 
   vary@1.1.2: {}
+
+  vite-plugin-ejs@1.7.0(vite@5.4.10):
+    dependencies:
+      ejs: 3.1.10
+      vite: 5.4.10
 
   vite@5.4.10:
     dependencies:
