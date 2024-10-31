@@ -1,25 +1,174 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 20px;
-  }
+  font-family: "Playfair+Display", sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
   
-  h1 {
-    color: #333;
-    background-color: aqua;
-  }
+h1 {
+  color: #f5f5f5;
   
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+button {
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* header stuff */
+
+header {
+  background-color: #ffff;
+  color: #FAF0CA;
+  padding: 20px;
+  text-align: left;
   
-  li {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+}
+
+header h1 {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 3vw;
+  
+}
+
+nav a {
+  color: #FAF0CA;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #F4D35E; /* Change color on hover */
+}
+
+/* hero image stuff */
+#hero{
+  max-width: 100%;
+  height: auto;
+  justify-content: center;
+}
+
+#mission{
+  background-color: #FAF0CA;
+  padding: 20px;
+  text-align: justify;
+}
+
+#mission h2{
+  text-align: center;
+}
+
+header nav{
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  top: 40px;
+  right: 25px;
+  
+}
+
+/*header img {
+  position: absolute;
+  top: 4%;
+  left: 5%;
+  width: 75px;
+  height: 75px;
+  
+}
+
+header span{
+  position: absolute;
+  top: 8%;
+  left: 15%;
+  color: #0D3B66;
+  font-size: 20px;
+
+} */
+
+header{
+   
+  padding: 50px;
+}
+
+li img{
+  width: 231px;
+  height: 231px;
+}
+
+.categories{
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+#beve{
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+#fruits{
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+#condiments{
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+
+#snacks{
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+div h2 {
+  text-align: center;
+  grid-column: 1/ span 5;
+  grid-row: 1/2;
+}
+
+#beve img{
+  max-width: 70%;
+  height: auto;
+}
+
+#snacks img{
+  max-width: 70%;
+  height: auto;
+}
+
+#fruits img{
+  max-width: 70%;
+  height: auto;
+}
+
+#condiments img {
+  max-width: 70%;
+  height: auto;
+}
+
+#search{
+  padding: 30px;
+}
+
+
+
+
+
+
   

@@ -1,16 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/public/css/styles.css"/>
-  <title>Grocery Store</title>
-</head>
-<body>
-  <h1>Welcome to the Grocery Store!</h1>
-  <form action="/search" method="GET">
-    <input type="text" name="q" placeholder="Search for groceries" required />
-    <button type="submit">Search</button>
-  </form>
-</body>
-</html>
+
+
+<%- include('partials/header') %>
+
+<div>
+  <img src="/public/images/copan.jpg" id="hero" alt="Tetr Store at it's beginning">
+</div>
+
+<div id="mission">
+  <h2>Mission</h2>
+  <p> At Don Guicho's Store, our mission is to nourish the Copan community by providing a diverse selection of high-quality, fresh, and locally-sourced groceries.
+    We are committed to supporting local farmers and artisans, ensuring our customers have access to products that reflect the unique flavors and traditions of our region. By prioritizing exceptional online service, we aim to make every shopping experience enjoyable and memorable, empowering our community to thrive.</p>
+</div>
+
+<form id="search" action="/search" method="GET">
+  <input type="text" name="q" placeholder="Search for groceries" required />
+  <button type="submit">Search</button>
+</form>
+
+<div class="categories" style="display: grid; justify-content: center; margin: 20px 0;">
+  <h2>TOP PRODUCTS</h2>
+  <div id="beve" style="margin: 10px;">
+      <img  src="/public/images/beverages2.jpg" alt="Beverages" style=" width: 150px; cursor: pointer;" onclick="searchByCategory('beverages')" />
+      <p>Beverages</p>
+  </div>
+  <div id="snacks" style="margin: 10px;">
+      <img src="/public/images/snacks2.jpeg" alt="Snacks" style="width: 150px; cursor: pointer;" onclick="searchByCategory('snacks')" />
+      <p>Snacks</p>
+  </div>
+  <div id="fruits" style="margin: 10px;">
+      <img src="/public/images/fruits.jpg" alt="Fruits" style="width: 150px; cursor: pointer;" onclick="searchByCategory('candies')" />
+      <p>Fruits</p>
+  </div>
+  <div id="condiments" style="margin: 10px;">
+      <img src="/public/images/condiments.webp" alt="Drinks" style="width: 150px; cursor: pointer;" onclick="searchByCategory('condiments')" />
+      <p>Condiments</p>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs') %>
