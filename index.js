@@ -53,6 +53,20 @@ app.post('/cart', (req, res) => {
   res.status(200).json({ cart });
 });
 
+// Update item quantity in cart
+app.post('/cart/update', (req, res) => {
+  const { title, change } = req.body;
+  const item = cart.find(item => item.title === title);
+
+  if (item) {
+    item.quantity = Math.max(1, item.quantity + change); // Ensures quantity doesn’t go below 1
+    res.json({ success: true, cart });
+  } else {
+    res.json({ success: false, message: 'Item not found' });
+  }
+});
+
+
 // Get cart route
 app.get('/cart', (req, res) => {
   res.render('cart', { cart });

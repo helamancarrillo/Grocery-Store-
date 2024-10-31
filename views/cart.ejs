@@ -1,14 +1,24 @@
 <%- include('partials/header') %>
 
-  <h2>Your Shopping Cart</h2>
-  <ul>
+<h2>Your Shopping Cart</h2>
+<div class="cart-container">
+  <ul class="cart-list">
     <% cart.forEach(item => { %>
-      <li>
-        <img src="<%= item.image %>" alt="<%= item.title %>" onerror="setDefaultImage(event)"  style="width: 50px; height: auto;" />
-        <strong><%= item.title %></strong> - Quantity: <%= item.quantity %>
+      <li id="scroll" class="cart-item">
+        <img src="<%= item.image %>" onerror="setDefaultImage(event)" alt="<%= item.title %>" class="cart-item-image" />
+        <div class="cart-item-details">
+          <h3 class="cart-item-title"><%= item.title %></h3>
+          <p class="cart-item-quantity">
+            Quantity: 
+            <button onclick="updateQuantity('<%= item.title %>', -1)" class="quantity-button">-</button>
+            <span><%= item.quantity %></span>
+            <button onclick="updateQuantity('<%= item.title %>', 1)" class="quantity-button">+</button>
+          </p>
+        </div>
       </li>
     <% }) %>
   </ul>
-  <a href="/">Continue Shopping</a>
+</div>
+<a href="/" class="continue-shopping">Continue Shopping</a>
   
 <%- include('partials/footer')  %>

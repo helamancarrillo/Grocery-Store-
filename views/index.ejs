@@ -2,22 +2,22 @@
 
 <%- include('partials/header') %>
 
-<div>
+<div >
   <img src="/public/images/copan.jpg" id="hero" alt="Tetr Store at it's beginning">
 </div>
 
-<div id="mission">
+<div class="mission" id="scroll">
   <h2>Mission</h2>
   <p> At Don Guicho's Store, our mission is to nourish the Copan community by providing a diverse selection of high-quality, fresh, and locally-sourced groceries.
     We are committed to supporting local farmers and artisans, ensuring our customers have access to products that reflect the unique flavors and traditions of our region. By prioritizing exceptional online service, we aim to make every shopping experience enjoyable and memorable, empowering our community to thrive.</p>
 </div>
 
-<form id="search" action="/search" method="GET">
+<form id="scroll" id="search" action="/search" method="GET">
   <input type="text" name="q" placeholder="Search for groceries" required />
   <button type="submit">Search</button>
 </form>
 
-<div class="categories" style="display: grid; justify-content: center; margin: 20px 0;">
+<div id="scroll" class="categories" style="display: grid; justify-content: center; margin: 20px 0;">
   <h2>TOP PRODUCTS</h2>
   <div id="beve" style="margin: 10px;">
       <img  src="/public/images/beverages2.jpg" alt="Beverages" style=" width: 150px; cursor: pointer;" onclick="searchByCategory('beverages')" />
