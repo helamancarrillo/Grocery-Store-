@@ -15,6 +15,7 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+
 button {
   padding: 10px 20px;
   margin: 10px;
@@ -597,24 +598,26 @@ h2 {
   color: #F4D35E;
 }
 
-.footer-icon {
-  font-size: 1.5em;
-  color: #F4D35E;
-  margin: 5px;
-  text-decoration: none;
-  transition: transform 0.3s ease, color 0.3s;
-}
 
-.footer-icon:hover {
-  color: #F95738;
-  transform: scale(1.2);
-}
+
+
 
 .footer-bottom {
   margin-top: 20px;
   font-size: 0.9em;
   border-top: 1px solid #FAF0CA;
   padding-top: 10px;
+}
+
+.footer-icon img {
+  width: 30px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 10px; /* Spacing between icons */
+  transition: transform 0.3s; /* Add a hover effect */
+}
+
+.footer-icon img:hover {
+  transform: scale(1.1); /* Slightly grow the icon on hover */
 }
 
 
@@ -698,15 +701,134 @@ h2 {
   background-color: #EE964B;
 }
 
+/* receips view */ 
 
+.recipes-container {
+  padding: 20px;
+}
 
+.recipes-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
+.recipe-item {
+  margin: 10px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 200px; /* Adjust width as necessary */
+}
 
+.recipe-item-image {
+  width: 100%; /* Makes the image responsive */
+  height: auto;
+  border-radius: 5px;
+}
 
+.recipe-item-title {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
 
+.view-recipe-button {
+  padding: 10px;
+  background-color: #0D3B66;
+  color: #FAF0CA;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 10px;
+  margin-top: 10px;
+}
 
+.view-recipe-button:hover {
+  background-color: #F4D35E;
+}
 
+/*receiptdetails part */
 
+.recipe-details-container {
+  padding: 30px;
+  background-color: #FAF0CA; /* Light background for readability */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 800px; /* Center the container */
+  margin: 20px auto; /* Center align the container */
+}
 
+.recipe-details-title {
+  text-align: center;
+  color: #0D3B66; /* Dark blue for titles */
+  font-size: 2.5em; /* Larger title size */
+  margin-bottom: 20px;
+}
 
-  
+.recipe-details-image {
+  display: block;
+  margin: 0 auto 20px; /* Center the image and add margin below */
+  max-width: 100%; /* Responsive image */
+  height: auto;
+  border-radius: 10px; /* Soft rounded corners */
+  transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.recipe-details-image:hover {
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+.recipe-details-instructions {
+  margin: 20px 0;
+  font-size: 1.2em; /* Slightly larger font for instructions */
+  color: #333; /* Dark text for better readability */
+  line-height: 1.6; /* Increased line height for readability */
+}
+
+.ingredients-list {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0;
+}
+
+.ingredient-item {
+  padding: 10px;
+  background-color: #F4D35E; /* Use a different color for ingredients */
+  color: #0D3B66; /* Dark blue text for contrast */
+  border-radius: 5px;
+  margin-bottom: 10px; /* Space between ingredients */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.ingredient-item:hover {
+  background-color: #EE964B; /* Change background on hover */
+}
+
+.continue-shopping {
+  display: inline-block; /* Make it look like a button */
+  padding: 12px 24px;
+  background-color: #0D3B66; /* Consistent with header/footer */
+  color: #FAF0CA;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.continue-shopping:hover {
+  background-color: #F95738; /* Highlight on hover */
+}
+
+#reciipes {
+  font-size: 2em; /* Make the font larger */
+  color: #F95738; /* Use a warm color for the text */
+  text-align: center; /* Center the text */
+  margin: 20px 0; /* Add space above and below */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+  font-family: 'Arial', sans-serif; /* Use a clean font */
+  padding: 10px; /* Add padding for a better look */
+  border-bottom: 2px solid #F4D35E; /* Add a bottom border for emphasis */
+}

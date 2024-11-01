@@ -13,6 +13,7 @@ async function addToCart(title, image) {
 
 
 
+
 function searchByCategory(category) {
     window.location.href = `/search?category=${category}`;
 }
@@ -21,7 +22,7 @@ function searchByCategory(category) {
 function setDefaultImage(event) {
     event.target.src = '/public/images/placeholder.png';
     event.target.onerror = null; // Prevents infinite loop
-  }
+}
 
 
 document.querySelector('.cart-icon').addEventListener('click', function() {
@@ -54,5 +55,17 @@ async function updateQuantity(title, change) {
       console.error('Error updating quantity:', error);
     }
 }
+
+
+
+function viewDetails(productId, ingredientId) {
+    window.location.href = `/ingredient/${ingredientId}`;
+}
+
+
+
+
+  
+  
   
 

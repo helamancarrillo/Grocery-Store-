@@ -1,0 +1,22 @@
+
+<%- include('partials/header') %>
+
+<h2>Recipes</h2>
+<div class="recipes-container">
+  <ul class="recipes-list">
+    <% recipes.forEach(recipe => { %>
+      <li id="scroll" class="recipe-item">
+        <img src="<%= recipe.image %>" onerror="setDefaultImage(event)" alt="<%= recipe.title %>" class="recipe-item-image" />
+        <div class="recipe-item-details">
+          <h3 class="recipe-item-title"><%= recipe.title %></h3>
+          <br>
+          <a href="/recipe/<%= recipe.id %>" class="view-recipe-button">View Recipe</a>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+
+<a href="/" class="continue-shopping">Home</a>
+
+<%- include('partials/footer.ejs') %>

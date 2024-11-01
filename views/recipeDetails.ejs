@@ -1,0 +1,20 @@
+
+<%- include('partials/header') %>
+
+<div class="recipe-details-container">
+    <h2 class="recipe-details-title"><%= recipeDetails.title %></h2>
+    <img src="<%= recipeDetails.image %>" onerror="setDefaultImage(event)" alt="<%= recipeDetails.title %>" class="recipe-details-image" />
+    
+    <p class="recipe-details-instructions"><%= recipeDetails.instructions || 'No instructions available.' %></p>
+    
+    <h2>Ingredients</h2>
+    <ul class="ingredients-list">
+        <% recipeDetails.extendedIngredients.forEach(ingredient => { %>
+            <li id="scroll" class="ingredient-item"><%= ingredient.original %></li>
+        <% }) %>
+    </ul>
+
+    <a href="/" class="continue-shopping">Home</a>
+</div>
+
+<%- include('partials/footer.ejs') %>

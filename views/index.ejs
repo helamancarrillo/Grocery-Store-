@@ -3,7 +3,7 @@
 <%- include('partials/header') %>
 
 <div >
-  <img src="/public/images/copan.jpg" id="hero" alt="Tetr Store at it's beginning">
+  <img src="/public/images/main-2.jpg" id="hero" alt="Tetr Store at it's beginning">
 </div>
 
 <div class="mission" id="scroll">
@@ -14,8 +14,9 @@
 
 <form id="scroll" id="search" action="/search" method="GET">
   <input type="text" name="q" placeholder="Search for groceries" required />
-  <button type="submit">Search</button>
+  <button type="submit">Search Grocery</button>
 </form>
+
 
 <div id="scroll" class="categories" style="display: grid; justify-content: center; margin: 20px 0;">
   <h2>TOP PRODUCTS</h2>
@@ -28,8 +29,8 @@
       <p>Snacks</p>
   </div>
   <div id="fruits" style="margin: 10px;">
-      <img src="/public/images/fruits.jpg" alt="Fruits" style="width: 150px; cursor: pointer;" onclick="searchByCategory('candies')" />
-      <p>Fruits</p>
+      <img src="/public/images/candies.webp" alt="Fruits" style="width: 150px; cursor: pointer;" onclick="searchByCategory('candies')" />
+      <p>Candies</p>
   </div>
   <div id="condiments" style="margin: 10px;">
       <img src="/public/images/condiments.webp" alt="Drinks" style="width: 150px; cursor: pointer;" onclick="searchByCategory('condiments')" />

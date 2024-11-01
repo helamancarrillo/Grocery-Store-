@@ -1,0 +1,18 @@
+
+<%- include('partials/header') %>
+
+<div >
+    <img src="/public/images/copan.jpg" id="hero" alt="Tetr Store at it's beginning">
+</div>
+
+<h2 id="reciipes">Find the Most Delicious Recipes </h2>
+
+<form  id="scroll" action="/recipes" method="GET">
+    <input type="text" name="q" placeholder="Search for recipes" required />
+    <button type="submit">Search Recipes</button>
+</form>
+
+
+
+
+<%- include('partials/footer.ejs') %>

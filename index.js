@@ -72,10 +72,89 @@ app.get('/cart', (req, res) => {
   res.render('cart', { cart });
 });
 
+// Get Product Details
+//app.get('/products/:id', async (req, res) => {
+//  const productId = req.params.id;
+//  try {
+//    const response = await axios.get(
+//      `https://api.spoonacular.com/food/products/${productId}?apiKey=${API_KEY}`
+//    );
+//    const productDetails = response.data;
+//    res.render('productDetails', { productDetails }); // Render product details view
+//  } catch (error) {
+//    console.error('Error fetching product details:', error);
+//    res.status(500).send('Error fetching product details.');
+//  }
+//});
+
+//app.get('/ingredient/:id', async (req, res) => {
+//  const ingredientId = req.params.id;
+//  try {
+//      const ingredientResponse = await axios.get(`https://api.spoonacular.com/food/ingredients/${ingredientId}/information?apiKey=${API_KEY}`);
+//      const ingredientDetails = ingredientResponse.data;
+//
+//      // Render the ingredient details page
+//      res.render('ingredientDetails', { ingredientDetails });
+//  } catch (error) {
+//      console.error('Error fetching ingredient details:', error);
+//      res.status(500).send('Error fetching ingredient details.');
+//  }
+//});
+
+app.get('/recipes', async (req, res) => {
+  const query = req.query.q; // Get the search query from the request
+  try {
+      const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${API_KEY}`);
+      const recipes = response.data.results; // Get the recipes from the response
+      res.render('recipes', { recipes }); // Render the recipes view with the fetched data
+  } catch (error) {
+      console.error('Error fetching recipes:', error);
+      res.status(500).send('Error fetching recipes.');
+  }
+});
+
+//app.get('/recipe/:id', async (req, res) => {
+//  const recipeId = req.params.id;
+//  try {
+//      const response = await axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${API_KEY}`);
+//      const recipeDetails = response.data; // Get recipe details
+//      res.render('recipeDetails', { recipeDetails }); // Render recipe details view
+//  } catch (error) {
+//      console.error('Error fetching recipe details:', error);
+//      res.status(500).send('Error fetching recipe details.');
+//  }
+//});
+
+app.get('/recipe/:id', async (req, res) => {
+  try {
+    const recipeId = req.params.id;
+    const response = await axios.get(`https://api.spoonacular.com/recipes/${recipeId}/information`, {
+      params: { apiKey: process.env.API_KEY },
+    });
+    let recipeDetails = response.data;
+    // Remove HTML tags from instructions
+    recipeDetails.instructions = recipeDetails.instructions.replace(/<\/?[^>]+(>|$)/g, '');
+
+    res.render('recipeDetails', { recipeDetails });
+  } catch (error) {
+    console.error('Error fetching recipe details:', error);
+    res.status(500).send('Error fetching recipe details.');
+  }
+});
+
+//receipts founder
+app.get('/mainrece', (req, res) => {
+  res.render('mainrece');
+});
+
+
+
 
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+
 
 
 
